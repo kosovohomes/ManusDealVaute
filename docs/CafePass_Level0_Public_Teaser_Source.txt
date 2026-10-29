@@ -1,0 +1,113 @@
+Yes — here is a clean, non-confidential **Level 0 public teaser** for CafePass, suitable for a DealVault project page, investor link, QR code, or early outreach.
+
+***
+
+# CafePass
+
+## One membership. A connected network of independent specialty cafés.
+
+**Dubai, UAE · Pre-launch · Consumer membership platform**  
+**Stage:** Pre-seed / Pre-launch  
+**Sector:** Consumer subscriptions · Local commerce · Hospitality  
+**Seeking:** USD 500,000 pre-seed  
+**Use of funds:** Dubai pilot, café network build-out, product refinement, and 18-month execution runway
+
+***
+
+## The opportunity
+
+Dubai has a strong and growing specialty-coffee culture, but independent cafés compete in a crowded market where customer acquisition is expensive and repeat visits are difficult to predict.
+
+CafePass is building a single digital membership that connects coffee lovers with a curated network of independent specialty cafés across Dubai.
+
+Members get one simple pass for discovering and visiting participating cafés. Participating cafés get a new channel for recurring foot traffic, discovery, and customer loyalty.
+
+***
+
+## What CafePass does
+
+CafePass is designed to create value on both sides of the local coffee market:
+
+- **For members:** One membership to discover and visit a curated network of independent specialty cafés.
+- **For cafés:** A digital channel to attract new customers, encourage repeat visits, and promote their café to a targeted local audience.
+- **For the market:** A connected discovery and loyalty layer for independent coffee, rather than another discount-led marketplace.
+
+***
+
+## Why now
+
+- Dubai’s specialty-coffee scene is highly active, but discovery remains fragmented.
+- Independent cafés need affordable, recurring customer acquisition.
+- Consumers increasingly value curated local experiences and simple subscription access.
+- Mobile-first payments, QR-based redemption, and digital membership infrastructure make a city-level coffee pass practical.
+
+***
+
+## Current status
+
+CafePass is a **pre-launch** venture.
+
+- Core platform flows and product foundation have been developed.
+- The company is preparing a controlled Dubai-first pilot.
+- The initial focus is to onboard a focused network of independent specialty cafés and validate member demand, redemption behaviour, retention, and café value.
+
+CafePass does not yet claim participating cafés, paying members, revenue, retention data, or product-market fit. The next phase is designed to generate that evidence.
+
+***
+
+## The plan
+
+The immediate priority is a controlled Dubai pilot:
+
+1. Select an initial Dubai catchment area.
+2. Onboard a focused group of independent specialty cafés.
+3. Launch a limited paid-member cohort.
+4. Measure activation, redemption frequency, repeat usage, retention, and café value.
+5. Refine pricing, café economics, product experience, and acquisition strategy.
+6. Expand across Dubai only after the model shows repeatable demand and sustainable café participation.
+
+***
+
+## Investment opportunity
+
+CafePass is raising a **USD 500,000 pre-seed round** to fund an 18-month Dubai execution and validation plan.
+
+The round is intended to support:
+
+- Dubai pilot launch and café onboarding
+- Product refinement and operational tooling
+- Member acquisition and local marketing
+- Café success and account management
+- Legal, compliance, and UAE operational setup
+- Working capital and team execution
+
+The objective is not simply to launch an app. It is to prove whether a connected specialty-coffee membership can create repeat member behaviour and measurable value for independent cafés.
+
+***
+
+## Express interest
+
+We are speaking with investors, café owners, and strategic partners who share our view that independent specialty coffee deserves a stronger digital discovery and loyalty layer.
+
+**[Express Interest]**  
+**[Request Investor Brief]**  
+**[Contact: Founder Name · Email · Phone · Website]**
+
+***
+
+### Suggested DealVault metadata
+
+| Field | Value |
+|---|---|
+| Project name | CafePass |
+| Tagline | One membership. A connected network of independent specialty cafés. |
+| Sector | Consumer subscriptions / local commerce |
+| Stage | Pre-seed / pre-launch |
+| Geography | Dubai, UAE |
+| Raise | USD 500,000 |
+| Instrument | Pre-seed / to be confirmed |
+| Status | Pre-launch |
+| Disclosure level | Level 0 — Public teaser |
+| CTA | Express Interest |
+
+This version deliberately avoids specific café counts, member projections, revenue forecasts, unit economics, and detailed pilot terms. Those belong in the **Level 1 registered brief** or **Level 2 qualified investor pack**, after the prospect has expressed interest and been qualified.
