@@ -3,9 +3,7 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "dist/public",
   "framework": null,
-  "functions": { "api/[...path].ts": { "runtime": "nodejs22.x" } },
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/((?!assets/|api/|manus-storage/).*)", "destination": "/index.html" }
   ]
 }

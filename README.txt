@@ -1,0 +1,1 @@
+Replace vercel.json in the root of the GitHub repository with the included file, commit, push, and redeploy Vercel. The explicit invalid runtime declaration was removed; Vercel will auto-detect api/[...path].ts as a Node function.
