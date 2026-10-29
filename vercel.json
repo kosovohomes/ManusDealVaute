@@ -1,0 +1,7 @@
+{
+  "installCommand": "corepack enable && corepack prepare pnpm@10.18.0 --activate && pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm build:static",
+  "outputDirectory": "dist/public",
+  "framework": null,
+  "rewrites": [{ "source": "/((?!assets/|api/|manus-storage/).*)", "destination": "/index.html" }]
+}
