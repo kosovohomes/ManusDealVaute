@@ -1,0 +1,33 @@
+import { ArrowLeft, Check, Copy, Mail, Printer, Save, Share2 } from "lucide-react";
+import { Link, useRoute } from "wouter";
+import { useState } from "react";
+import { projects } from "@/data";
+import { AccessNote, MetricHighlight, MetricRibbon } from "@/components/MetricHighlight";
+import { SectionKicker, StatusTag } from "@/components/DealVaultShell";
+
+export default function ProjectNutshell() {
+  const [, params] = useRoute("/project/:slug/nutshell");
+  const project = projects.find(item => item.slug === params?.slug) ?? projects[0];
+  const [saved, setSaved] = useState(() => typeof window !== "undefined" && localStorage.getItem(`nutshell:${project.slug}`) === "saved");
+  const [message, setMessage] = useState("");
+
+  const notify = (text: string) => { setMessage(text); window.setTimeout(() => setMessage(""), 2200); };
+  const save = () => { localStorage.setItem(`nutshell:${project.slug}`, "saved"); setSaved(true); notify("Saved to this browser"); };
+  const copy = async () => { await navigator.clipboard?.writeText(window.location.href); notify("Link copied"); };
+  const share = async () => {
+    if (navigator.share) await navigator.share({ title: `${project.title} — Project in a Nutshell`, text: project.tagline, url: window.location.href });
+    else await copy();
+  };
+  const email = () => { window.location.href = `mailto:?subject=${encodeURIComponent(`${project.title} — Project in a Nutshell`)}&body=${encodeURIComponent(`${project.title}\n${project.tagline}\n\n${window.location.href}`)}`; };
+
+  return <div className="nutshell-page min-h-screen bg-[#F7F6F1] text-[#111A14]">
+    <header className="nutshell-toolbar border-b border-[#DADDD5] bg-[#F7F6F1] px-5 py-4 md:px-10"><div className="mx-auto flex max-w-[1120px] items-center justify-between gap-4"><Link href={`/project/${project.slug}`} className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#111A14]"><ArrowLeft size={14}/> Back to project</Link><div className="flex flex-wrap items-center justify-end gap-2"><button onClick={() => window.print()} className="nutshell-action"><Printer size={14}/> Print / PDF</button><button onClick={email} className="nutshell-action"><Mail size={14}/> Email</button><button onClick={share} className="nutshell-action"><Share2 size={14}/> Share</button><button onClick={copy} className="nutshell-action"><Copy size={14}/> Copy link</button><button onClick={save} className={`nutshell-action ${saved ? "nutshell-action-active" : ""}`}><Save size={14}/> {saved ? "Saved" : "Save"}</button></div></div></header>
+    <main className="mx-auto max-w-[1120px] px-5 py-8 md:px-10 md:py-12">
+      <article className="nutshell-sheet overflow-hidden rounded-[26px] border border-[#D7DED7] bg-white shadow-[0_18px_55px_rgba(27,40,33,.08)]">
+        <div className="relative overflow-hidden bg-[#1B2821] px-7 py-8 text-white md:px-12 md:py-12"><div className="absolute -right-20 -top-28 h-80 w-80 rounded-full border border-white/15"/><div className="absolute -bottom-40 left-1/2 h-96 w-96 rounded-full border border-white/10"/><div className="relative z-10 flex items-start justify-between gap-8"><div><div className="font-display text-[18px] font-semibold tracking-[0.18em] text-white">DEALVAULT</div><div className="mt-10"><SectionKicker>{project.eyebrow} · {project.visibility}</SectionKicker><h1 className="max-w-3xl font-display text-[58px] font-semibold leading-[.9] tracking-[-0.04em] text-white md:text-[86px]">{project.title}</h1><p className="mt-5 max-w-2xl font-display text-[26px] font-semibold leading-tight text-[#D9E8DC] md:text-[34px]">{project.tagline}</p></div></div><StatusTag tone="good">{project.status}</StatusTag></div><p className="relative z-10 mt-8 max-w-3xl text-[14px] font-semibold leading-6 text-[#E2ECE4]">{project.summary}</p></div>
+        <div className="space-y-9 p-7 md:p-12"><MetricRibbon project={project}/><div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr]"><section><SectionKicker>Why it matters</SectionKicker><h2 className="nutshell-heading">The opportunity</h2><p className="mt-4 text-[14px] font-semibold leading-7 text-[#26332B]">{project.opportunity}</p></section><section className="rounded-2xl bg-[#EEF5EF] p-6"><SectionKicker>How it works</SectionKicker><h2 className="nutshell-heading">The model</h2><p className="mt-4 text-[14px] font-semibold leading-7 text-[#26332B]">{project.businessModel}</p></section></div><section><div className="flex flex-wrap items-end justify-between gap-4"><div><SectionKicker>Capital plan</SectionKicker><h2 className="nutshell-heading">What the round unlocks</h2></div><span className="text-[12px] font-bold text-[#111A14]">{project.ticket}</span></div><div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{project.useOfFunds.slice(0, 6).map((item, i) => <div key={item} className="rounded-xl border border-[#D7DED7] p-4"><span className="font-mono text-[10px] font-bold text-[#527361]">0{i + 1}</span><p className="mt-5 text-[13px] font-bold text-[#111A14]">{item}</p></div>)}</div></section><section className="rounded-2xl border border-[#D7DED7] p-6 md:p-7"><div className="flex flex-col justify-between gap-5 md:flex-row md:items-center"><div><SectionKicker>Current signal</SectionKicker><p className="font-display text-[38px] font-semibold leading-none text-[#111A14]">{project.metric}</p><p className="mt-2 text-[12px] font-bold uppercase tracking-[0.14em] text-[#526058]">{project.metricLabel}</p></div><div className="max-w-xl text-[13px] font-semibold leading-6 text-[#26332B]">{project.traction}</div></div></section><div className="grid gap-4 md:grid-cols-2"><MetricHighlight label="Next milestone" value="Pilot / validation" detail="The next evidence-building step" accent={project.accent}/><div className="rounded-2xl border border-[#D7DED7] bg-[#FBFCF9] p-5"><SectionKicker>Access</SectionKicker><AccessNote/><p className="mt-4 text-[12px] font-semibold leading-5 text-[#526058]">This one-page summary is based on the public teaser. Detailed materials may require registration, qualification, NDA, or operator approval.</p></div></div><footer className="flex flex-col justify-between gap-4 border-t border-[#E1E5DF] pt-6 text-[11px] font-semibold text-[#526058] md:flex-row"><span>DealVault · Project in a Nutshell · {project.title}</span><span>Prepared {new Date().toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}</span></footer></div>
+      </article>
+      {message && <div className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full bg-[#111A14] px-4 py-3 text-[12px] font-bold text-white shadow-xl"><Check size={14} className="mr-2 inline"/>{message}</div>}
+    </main>
+  </div>;
+}
