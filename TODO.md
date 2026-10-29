@@ -10,3 +10,14 @@
 - [x] Remove all mockup project records, mock investor requests, mock documents, and mock activity from the seeded DealVault system.
 - [x] Keep CafePass as the only project in the public portfolio, operator project library, analytics project list, and document library.
 - [ ] Insert the complete Markdown document bundle and infographic after the user provides files directly or enables Drive access.
+
+## 13. Authentication and protected access
+- [x] Add database-backed users with password hashes, email, role, verification state, and last-sign-in timestamp.
+- [x] Add persistent hashed session tokens with 30-day secure HttpOnly cookies and logout invalidation.
+- [x] Add registration, login, current-session, and logout endpoints under `/api/auth/*`.
+- [x] Replace the static Amelia Reed identity with dynamic session state and a functional profile menu.
+- [x] Add public login and registration screens.
+- [x] Protect investor workspace routes and administrator routes in the client router.
+- [x] Add a server-side `/api/admin/*` administrator guard for future administrative actions.
+- [x] Add Vercel catch-all API deployment and document `DATABASE_URL` plus `DEALVAULT_ADMIN_EMAIL` requirements.
+- [x] Generate and apply the additive Drizzle migration for password fields and sessions.
